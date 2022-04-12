@@ -1,11 +1,11 @@
 body {
     background-color: lightgray;
     text-align: center;
-    font-family: sans-serif;
+    font-family: Helvetica;
 }
 .h2 {
-    font-family: bold;
+    font-weight: bold;
 }
 .h3 {
-    font-family: bold;
+    font-weight: bold;
 }

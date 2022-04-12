@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mixed Messaged</title>
-    <link href="./styles.css" type="text/css" rel="stylesheet">
+    <title>Random Inspirational Quotes</title>
+    <link href="/style/styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <h1>Inspirational Quotes</h1>
     <h2 class="h2" id="h2"></h2>
     <br>
-    <h3 id="h3"></h3>
     <section id="randomise">
         <button id="randomise">Another Quote</button>
     </section>
     <br><br>
-    <form action="submission.html" >
+    <form name='myform'   >
         Whats your point to the quote ? <br>
         <span>1</span>
         <input type="range" name="score" max="10" min="1" id="quotePoint">
         <span>10</span>
         <br> <br> <br>
+        <p>Did you like the color ?</p> yes no <br>
+        <input type="radio" value="yes" name="gender" id="yes">
+        <input type="radio" value="no" name="gender" id="no">
+        <br> <br> <br>
         <label for="addquote">Add a Quote :</label>
         <input id="addquote" name="addquote" type="text" minlength="5" required>
         <br><br>
         <section class="submission">
-            <input type="Submit" value="submit">
+            <input type="Submit" value="submit" id="submit">
         </section>
-    
     </form>
-    <script src="./script.js"></script>
+    <h3 id="h3"></h3>
+    <br><br><input type="submit" value=" Alert " id="test-alert">
+    <script src="/scripts/script.js"></script>
 </body>
 </html>

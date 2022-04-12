@@ -1,4 +1,3 @@
-
 const messageArray = [ "In my experience, there is only one motivation, and that is desire. No reasons or principle contain it or stand against it.", "Success does not consist in never making mistakes but in never making the same one a second time.", 
 "I don't want to get to the end of my life and find that I lived just the length of it. I want to have livedthe width of it as well.", "You must expect great things of yourself before you can do them.", "Motivation is what gets you started. Habit is what keeps you going.", 
 "People rarely succeed unless they have fun in what they are doing.", "There is no chance, no destiny, no fate, that can hinder or control the firm resolve of a determined soul.", "Our greatest fear should not be of failure but of succeeding at things in life that don't really matter.", 
@@ -15,12 +14,16 @@ class messagefinder {
     constructor() {
         this.arrayMessages = messageArray;
         this.score = 0;
+        this.laterquotes = [];
     }
     get total() {
         return this.arrayMessages;
     }
     get score() {
         return this.score;
+    }
+    get laterquotes() {
+        return this.laterquotes;
     }
     score(num) {
         this.score = num;
@@ -29,45 +32,50 @@ class messagefinder {
         let randomindex = Math.floor(Math.random()*this.arrayMessages.length);
         return this.arrayMessages[randomindex];
     }
+    laterquotes(quoteforadding) {
+        this.laterquotes.push(quoteforadding);
+        this.arrayMessages.push(quoteforadding);
+    }
 }
 
 const getScoreFunction = classInput => {
     return classInput.score();
 }
 
-function randomforhtml () {
-    const bodyindex = document.getElementById('h3');
-    bodyindex.innerHTML = deneme;
-}
-
 const randomButton = document.getElementById('randomise');
-
-
-
-
-
-const deneme1 = new messagefinder;
-
-// console.log(deneme1.total);
-console.log('----------------------------------------');
-
-const deneme = deneme1.randomMessage();
-console.log(deneme);
-//console.log(messageArray[2]);
-// console.log(messageArray[2][5]);
-
 const bodyindex = document.getElementById('h2');
-bodyindex.innerHTML = deneme;
+const submit = document.getElementById('submit');
+const quotePoint = document.getElementById('quotePoint');
+const h3quote = document.getElementById('h3');
 
+const addquote = document.getElementById('addquote');
 
-console.log(deneme1.score);
-deneme1.score = 10;
-console.log(deneme1.score);
-deneme1.score = 150;
+const deneme = new messagefinder;
+document.getElementById('h2').innerHTML = deneme.randomMessage();
 
-console.log(deneme1.score);
+console.log(addquote);
+
+/*
+const addingquote = (quotetoAdd,array) => {
+    array.push(quotetoAdd);
+}
+submit.onclick = addingquote(quoteadding,messageArray);
+console.log(messageArray.length-1);
+*/
 
 randomButton.onclick = function() {
-    let oneMoreRandom = deneme1.randomMessage();
+    let oneMoreRandom = deneme.randomMessage();
     document.getElementById('h2').innerHTML = oneMoreRandom;
 }
+
+
+setInterval(() => {
+    h3quote.innerHTML = deneme.randomMessage();
+}, 3000);
+
+document.getElementById('test-alert').onclick = function () {
+    alert("alert random")
+}
+
+//action="submission.html" method="PUT" eklemeyi ununtma index e form  un basinnna 
+
